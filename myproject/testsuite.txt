@@ -1,0 +1,169 @@
+This is the working for all functions of the four header files that I have written.
+The functions starting with "my" are in-built functions of <math.h> library that I have written with my logic.
+Rest of the functions are designed by me and their prototypes are also given here.
+The functions with prototypes and return values are described below from each header file.
+In ever function, returning INT_MIN means error value or out of scope of function.
+NOTE : In any function, if "character" is passed as input, it excutes function for ASCII value of character passed.
+
+1) "trignometry.h"
+
+1. double mysin(double x),float mysinf(float x),long double mysinl(long double x)
+Input parameter is in radians, returns sine of input for all values of input.
+
+2. double mycos(double x),float mycosf(float x),long double mycosl(long double x)
+Input parameter is in radians, returns cosine of input for all values of input.
+
+3. double mytan(double x),float mytanf(float x),long double mytanl(long double x)
+Input parameter is in radians, returns tangent of input for all non-integral multiples of PI/2.
+returns INT_MIN for integral multiples of PI/2.
+
+4. double myasin(double x),float myasinf(float x),long double myasinl(long double x)
+returns sine inverse of input in radians for all values of input between [-1,1].
+else returns INT_MIN for other values.
+
+5. double myacos(double x),float myacosf(float x),long double myacosl(long double x)
+returns cosine inverse of input in radians for all values of input between [-1,1].
+else returns INT_MIN for other values.
+
+6. double myatan(double x),float myatanf(float x),long double myatanl(long double x)
+returns tangent inverse in radians for all values of input.
+
+7. void mysincos(double x,double *p,double *q),void mysincosf(float x,float *p,float *q)
+void mysincosl(long double x,long double *p,long double *q)
+It makes 2nd paramter to point where sine of 1st parameter is stored.
+It makes 3rd paramter to point where cosine of 1st parameter is stored.
+Works for all inputs in radians. Returns nothing.
+
+8. double myatan2(double y,double x),float myatan2f(float y,float x),long double myatan2l(long double y,long double x)
+returns INT_MIN for x=0,y=0.
+returns PI/2 for x>0,y=0.
+returns -PI/2 for x<0,y=0.
+returns PI for x=0,y>0.
+returns -PI for x=0,y<0.
+returns tangent inverse of (x/y) in radians for all other input values.
+
+9. double mysinh(double x),float mysinhf(float x),long double mysinhl(long double x)
+Input parameter is in radians, returns hyperbolic sine of input for all values of input.
+
+10. double mycosh(double x),float mycoshf(float x),long double mycoshl(long double x)
+Input parameter is in radians, returns hyperbolic cosine of input for all values of input.
+
+11. double mytanh(double x),float mytanhf(float x),long double mytanhl(long double x)
+Input parameter is in radians, returns hyperbolic tangent of input  for all values of input.
+
+12. double myasinh(double x),float myasinhf(float x),long double myasinhl(long double x)
+returns hperbolic sine inverse of input in radians for all possible input values. 
+
+13. double myacosh(double x),float myacoshf(float x),long double myacoshl(long double x)
+returns hyperbolic cosine inverse of input in radians for all values of input greater than or equal to 1.
+else it returns INT_MIN for rest all values.
+
+14. double myatan(double x),float myatanf(float x),long double myatanl(long double x)
+returns hyperbolic tangent inverse in radians for all values of input between (-1,1).
+else returns INT_MIN for rest all input values.
+
+2) "algebra.h"
+
+1. double mysqrt(double x),float mysqrtf(float x),long double mysqrtl(long double x)
+returns INT_MIN for all negative number inputs.
+returns squareroot of inputs for all non-negative inputs.
+
+2. double myhypot(double x,double y),float myhypotf(float x,float y),long double myhypotl(long double x,long double y)
+returns euclidean distance that is sqrt(x*x+y*y) for all non negative input values.
+else returns INT_MIN for all other values.
+
+3. double *quadratic(double x,double y,double z),float *quadraticf(float x,float y,float z)
+long double *quadraticl(long double x,long double y,long double z)
+returns solution of quadratic as pointer to array of 2 elments if solvable.
+if quadratic has complex roots it returns array of INT_MIN.
+
+4. double *simsol2(double a[],double b[]),float *simsol2f(float a[],float b[])
+long double *simsol2l(long double a[],long double b[])
+Inputs are arrays of 3 coefficients of 2 equations.
+returns pointer to array of 2 elements of solutions if has a unique solution.
+else returns array of INT_MIN.
+
+5. double *simsol3(double a[],double b[],double c[]),float *simsol3f(float a[],float [],float [])
+long double *simsol3l(long double a[],long double b[],long double c[])
+Inputs are arrays of 4 coefficients of 3 equations.
+returns pointer to array of 3 elements of solutions if has a unique solution.
+else returns array of INT_MIN.
+
+3) "numbertheory.h"
+
+1. int gcd(int x,int y) 
+returns gcd of 2 numbers if they are positive integers.
+returns INT_MIN for rest any of the input value.
+
+2. int lcm(int x,int y)
+returns lcm of 2 numbers if they are positive integers.
+returns INT_MIN for rest any of the input value.
+
+3. double myfloor(double x),float myfloorf(float x),long double myfloorl(long double x)
+returns the greatest integer less than or equal to input for all possible input values.
+
+4. double myceil(double x),float myceilf(float x),long double myceill(long double x)
+returns the least integer greater than or equal to input for all possible input values.
+
+5. double myfracpart(double x),float myfracpartf(float x),long double myfracpartl(long double x)
+returns the fractional part of input for all possible input values.
+
+6. int factorial(int x)
+returns factorial value of given input for non-negative integer values.
+returns INT_MIN for rest all negative values.
+
+7.int numdivisors(int x)
+returns number of divisors of given input for non-negative numbers.
+else returns INT_MIN for negative numbers.
+
+8. int primecheck(int x)
+returns 1 if given number is prime. Else returns 0.
+Works only on positive numbers.
+
+9. int squarecheck(int x)
+returns 1 if given number is a perfect square. Else returns 1.
+Works only on non-negative integers.
+
+10. int numprimes(int x)
+returns number of primes less than or equal to x for non-negative integers.
+Else returns INT_MIN.
+
+11. int divprimes(int x)
+returns number of primes which divide the given input number.
+Works only on non-negative numbers.
+
+12. int powofprime(int p,int n)
+returns highest power of prime p which divides n. Works only on positive integers.
+
+13. factor *primefact(int n)
+returns pointer to a structure which contains primes and their powers which divide n.
+Hence prime factorisation of given input can be printed.
+Works only on positive integers.
+
+4) "logexp.h"
+
+1. double mylog(double x),float mylogf(float x),long double mylogf(long double x)
+returns logarithm to base e of entered input values for positive numbers.
+else it returns INT_MIN for negative numbers or zero.
+
+2. double mylog2(double x),float mylog2f(float x),long double mylog2f(long double x)
+returns logarithm to base 2 of entered input values for positive numbers.
+else it returns INT_MIN for negative numbers or zero.
+
+3. double mylog10(double x),float mylog10f(float x),long double mylog10f(long double x)
+returns logarithm to base e of entered input values for positive numbers.
+else it returns INT_MIN for negative numbers or zero.
+
+4. double myexp(double x),float myexpf(float x),long double myexpl(long double x)
+returns the xth power of e for all possible input values.
+
+5. double myexp2(double x),float myexp2f(float x),long double myexp2l(long double x)
+returns the xth power of 2 for all possible input values.
+
+6. double myexp10(double x),float myexp10f(float x),long double myexp10l(long double x)
+returns the xth power of 10 for all possible input values.
+
+7. double mypow(double x,double y),float mypowf(float x,float y),long double mypowl(long double x,long double y)
+returns INT_MIN if x=0 and y=0, or y is non-integer number.
+otherwise it returns yth power of x for all possible input values. 
+
